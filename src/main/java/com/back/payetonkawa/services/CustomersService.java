@@ -1,4 +1,4 @@
 package com.back.payetonkawa.services;
 
-public class CustomersService {
+public interface CustomersService {
 }
