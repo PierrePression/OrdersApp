@@ -1,4 +1,4 @@
 package com.back.payetonkawa.controller.api;
 
-public interface CustomersApiInterface {
+public interface OrderApiInterface {
 }

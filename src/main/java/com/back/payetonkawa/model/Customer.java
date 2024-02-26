@@ -21,7 +21,4 @@ public class Customer {
     private String codePostal;
 
     private String ville;
-
-
-
 }

@@ -1,22 +1,19 @@
-package com.back.payetonkawa.model;
+package com.back.payetonkawa.dto;
 
-import jakarta.persistence.*;
+import com.back.payetonkawa.model.Customer;
+import com.back.payetonkawa.model.Product;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
 
-@Entity
-@Getter
 @Setter
-public class Order {
-    @Id
+@Getter
+public class OrderDto {
+
     private Long id;
 
-    @ManyToMany
     private List<Product> products;
 
-    @ManyToOne
     private Customer customer;
-
 }
