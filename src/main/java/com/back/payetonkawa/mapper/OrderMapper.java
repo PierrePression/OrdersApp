@@ -15,6 +15,6 @@ public interface OrderMapper {
     @Mapping(source="id", target="id")
     @Mapping(source = "products", target = "products")
     @Mapping(source = "customer", target = "customer")
-    public OrderDto OrderDtoToOrder(Order order);
+    public Order OrderDtoToOrder(OrderDto order);
 
 }

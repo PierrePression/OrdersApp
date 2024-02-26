@@ -27,7 +27,7 @@ public class OrderController implements OrderApiInterface {
     }
 
     @PostMapping("updateOrder")
-    public ResponseEntity<OrderDto> updateOrder(@RequestBody Order order) {
+    public ResponseEntity<OrderDto> updateOrder(@RequestBody OrderDto order) {
         return ResponseEntity.ok(this.orderService.updateOrder(order));
 
     }

@@ -12,7 +12,7 @@ public interface OrderService {
 
     OrderDto getbyId(Long id);
 
-    OrderDto updateOrder(Order order);
+    OrderDto updateOrder(OrderDto order);
 
     String deleteOrder(Long id);
 

@@ -35,7 +35,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public OrderDto updateOrder(Order order) {
+    public OrderDto updateOrder(OrderDto order) {
         Order oldOrder = this.orderRepository.getById(order.getId());
 
         oldOrder.setCustomer(order.getCustomer());
@@ -54,9 +54,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderDto createOrder(OrderDto order) {
-        Order newOrder = new Order();
-        newOrder.setProducts(order.getProducts());
-        newOrder.setCustomer(order.getCustomer());
+        Order newOrder = this.orderMapper.OrderDtoToOrder(order);
 
         this.orderRepository.createOrder(newOrder);
 
