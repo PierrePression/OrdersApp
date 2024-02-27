@@ -1,6 +1,6 @@
 package com.back.payetonkawa.repository;
 
-import com.back.payetonkawa.model.Order;
+import com.payetonkafe.entity.model.Order;
 
 import java.util.List;
 

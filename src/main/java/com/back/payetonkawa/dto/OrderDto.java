@@ -1,7 +1,7 @@
 package com.back.payetonkawa.dto;
 
-import com.back.payetonkawa.model.Customer;
-import com.back.payetonkawa.model.Product;
+import com.payetonkafe.entity.model.Product;
+import com.payetonkafe.entity.model.Customer;
 import lombok.Getter;
 import lombok.Setter;
 

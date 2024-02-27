@@ -2,13 +2,11 @@ package com.back.payetonkawa.services.impl;
 
 import com.back.payetonkawa.dto.OrderDto;
 import com.back.payetonkawa.mapper.OrderMapper;
-import com.back.payetonkawa.model.Order;
+import com.payetonkafe.entity.model.*;
 import com.back.payetonkawa.repository.OrderRepository;
 import com.back.payetonkawa.services.OrderService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 

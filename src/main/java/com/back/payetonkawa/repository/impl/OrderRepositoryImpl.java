@@ -1,6 +1,6 @@
 package com.back.payetonkawa.repository.impl;
 
-import com.back.payetonkawa.model.Order;
+import com.payetonkafe.entity.model.Order;
 import com.back.payetonkawa.repository.OrderRepository;
 import org.springframework.stereotype.Repository;
 
