@@ -1,7 +1,7 @@
 package com.back.payetonkawa.mapper;
 
 import com.back.payetonkawa.dto.OrderDto;
-import com.payetonkafe.entity.model.Order;
+import com.back.payetonkawa.model.Order;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

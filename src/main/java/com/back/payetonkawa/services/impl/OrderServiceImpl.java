@@ -2,16 +2,22 @@ package com.back.payetonkawa.services.impl;
 
 import com.back.payetonkawa.dto.OrderDto;
 import com.back.payetonkawa.mapper.OrderMapper;
-import com.payetonkafe.entity.model.*;
+
+import com.back.payetonkawa.model.Order;
 import com.back.payetonkawa.repository.OrderRepository;
 import com.back.payetonkawa.services.OrderService;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @AllArgsConstructor
+@NoArgsConstructor
+@Transactional
 public class OrderServiceImpl implements OrderService {
 
     private OrderRepository orderRepository;
@@ -21,7 +27,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<OrderDto> getAllOrders(){
         List<OrderDto> result = new ArrayList<>();
-        this.orderRepository.getAll().forEach(
+        this.orderRepository.findAll().forEach(
                 elt -> result.add(this.orderMapper.OrderToOrderDto(elt))
         );
         return result;
@@ -29,24 +35,24 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderDto getbyId(Long id) {
-        return this.orderMapper.OrderToOrderDto(this.orderRepository.getById(id));
+        return this.orderMapper.OrderToOrderDto(this.orderRepository.findById(id).get());
     }
 
     @Override
     public OrderDto updateOrder(OrderDto order) {
-        Order oldOrder = this.orderRepository.getById(order.getId());
+        Order oldOrder = this.orderRepository.findById(order.getId()).get();
 
         oldOrder.setCustomer(order.getCustomer());
         oldOrder.setProducts(order.getProducts());
 
-        this.orderRepository.update(oldOrder);
+        this.orderRepository.save(oldOrder);
 
         return this.orderMapper.OrderToOrderDto(oldOrder);
     }
 
     @Override
     public String deleteOrder(Long id) {
-        this.orderRepository.deleteOrder(id);
+        this.orderRepository.deleteById(id);
         return "La commande à bien été suprimée.";
     }
 
@@ -54,7 +60,7 @@ public class OrderServiceImpl implements OrderService {
     public OrderDto createOrder(OrderDto order) {
         Order newOrder = this.orderMapper.OrderDtoToOrder(order);
 
-        this.orderRepository.createOrder(newOrder);
+        this.orderRepository.save(newOrder);
 
         return this.orderMapper.OrderToOrderDto(newOrder);
     }

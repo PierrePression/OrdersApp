@@ -4,6 +4,7 @@ import com.back.payetonkawa.controller.api.OrderApiInterface;
 import com.back.payetonkawa.dto.OrderDto;
 import com.back.payetonkawa.services.OrderService;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/orders/")
 @AllArgsConstructor
+@NoArgsConstructor
 public class OrderController implements OrderApiInterface {
 
     private OrderService orderService;

@@ -1,18 +1,14 @@
 package com.back.payetonkawa.repository;
 
-import com.payetonkafe.entity.model.Order;
 
-import java.util.List;
+import com.back.payetonkawa.model.Order;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface OrderRepository {
+@Repository
+public interface OrderRepository extends JpaRepository<Order, Long> {
 
-    public List<Order> getAll();
 
-    public Order getById(Long id);
 
-    public void update(Order oldOrder);
 
-    public void deleteOrder(Long id);
-
-    public void createOrder(Order order);
 }
